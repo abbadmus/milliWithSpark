@@ -1,15 +1,21 @@
 services:
   spark-master:
     image: spark-master:latest
+    # build: ./docker/spark-master
     ports:
       - "4040:4040"
       - "9090:8080"
       - "7077:7077"
+      - "2200:22"
     volumes:
        - ./apps:/opt/spark-apps
        - ./data:/opt/spark-data
     environment:
       - "SPARK_LOCAL_IP=spark-master"
+    networks:
+      - airflowcourse_airflow-network
+
+
   spark-worker:
     image: spark-worker:latest
     depends_on:
@@ -23,3 +29,9 @@ services:
     volumes:
        - ./apps:/opt/spark-apps
        - ./data:/opt/spark-data
+    networks:
+      - airflowcourse_airflow-network
+
+networks:
+  airflowcourse_airflow-network:
+    external: true

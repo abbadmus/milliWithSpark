@@ -210,4 +210,5 @@ spark-warehouse/
 .vscode
 out
 .scalafmt.conf
-spark-cluster/apps/out.jar
+spark-cluster/apps/*.jar
+goodComedies/*

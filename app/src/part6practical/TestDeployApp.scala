@@ -39,7 +39,8 @@ object TestDeployApp {
   // goodComedy.write.mode(SaveMode.Overwrite).json("app/resources/goodMovie") //args(1)
   // val movieDf = readFileSpark("app/resources/movies.json", "json")
 
-  // ./bin/spark-submit --class app.part6practical.TestDeployApp --deploy-mode client --master spark://119db539738a:7077 --verbose --supervise /opt/spark-apps/out.jar /opt/spark-data/movies.json /opt/spark-data/goodComedies
+  // spark/bin/spark-submit --deploy-mode client --master spark://dc915f50ba95:7077 --verbose --supervise /opt/spark-apps/out.jar /opt/spark-data/movies.json /opt/spark-data/goodComedies
+  // ./bin/spark-submit --master spark://spark-cluster-spark-master-1:7077 --name arrow-spark --class part6practical.TestDeployApp --verbose --deploy-mode client /opt/spark-apps/out.jar /opt/spark-data/movies.json /opt/spark-data/goodComedies
 }
 
 
